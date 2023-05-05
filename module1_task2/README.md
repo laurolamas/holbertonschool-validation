@@ -1,11 +1,11 @@
-`#`Prerequisites
+`# Prerequisites`
 
 To build this website, you will need to have the following installed:
 
     Go-Hugo
     GNU Make
 
-`#`Lifecycle
+`# Lifecycle`
 
 There are three main steps involved in building and maintaining this website:
 
