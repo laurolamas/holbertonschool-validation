@@ -14,3 +14,5 @@ There are three main steps involved in building and maintaining this website:
     Clean: This step cleans up the content of the directory dist/. To run this step, use the command `make clean`.
 
     Post: This step creates a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME. To run this step, use the command `make POST_NAME=your-post-name POST_TITLE="Your Post Title" post`.
+
+    Help: Show this help usage 
