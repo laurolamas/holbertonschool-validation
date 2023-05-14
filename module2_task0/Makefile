@@ -22,7 +22,7 @@ stop: ## Stop the application with the command kill XXXXX where XXXXX is the Pro
 	pkill awesome-api
 
 test: ## You want to test it to ensure that it behaves as expected. With the application started, you may want to use the command line curl (or your web browser, or the command wget or any other HTTP client):
-	curl http://localhost:9999/health
+	curl http://localhost:9999
 	curl http://localhost:9999/health
 
 help: ## Show this help usage
