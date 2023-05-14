@@ -20,3 +20,5 @@ stop: this target should stop the running server. You can use the "kill" command
 clean: this target should stop the running server (if it is running), delete the binary in the BUILD_DIR directory, and delete the LOG_FILE.
 
 test: this target should run some tests to ensure that the server is working as expected. You can use the "curl" command to send HTTP requests to the server and check the responses.
+
+lint: lint the code
