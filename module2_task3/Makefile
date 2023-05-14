@@ -32,7 +32,7 @@ unit-tests: ## Make Unit tests
 	go test -v -short -coverprofile=coverage-units.out
 
 integration-tests: ## Make integration tests
-	go test -coverprofile=coverage-integrations.out
+	go test -v -coverprofile=coverage-integrations.out
 
 help: ## Show this help usage
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
