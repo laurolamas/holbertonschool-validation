@@ -1,4 +1,5 @@
-build: check ## Generate the website from the markdown and configuration files in the directory dist/ and compile the source code of the application to a binary named awesome-api.
+build: ## Generate the website from the markdown and configuration files in the directory dist/ and compile the source code of the application to a binary named awesome-api.
+	make check
 	hugo
 	make lint
 	go build 
@@ -35,14 +36,12 @@ integration-tests: ## Make integration tests
 	go test -v -coverprofile=coverage-integrations.out
 
 check: ## Check the Markdown source files for linting and dead links
-	@echo "Linting Markdown files..."
-	markdownlint ./content/posts/*.md
-	@echo "Analyzing links..."
-	markdown-link-check ./content/posts/*.md
+	markdownlint ./content/posts/*
+	markdown-link-check ./content/posts/*
 
 validate: ## Validate the generated HTML file
 	@echo "Validating HTML..."
-	python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html || true
+	-python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html
 
 help: ## Show this help usage
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
