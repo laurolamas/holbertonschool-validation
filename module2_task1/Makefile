@@ -1,11 +1,9 @@
-build: ## Generate the website from the markdown and configuration files in the directory dist/
-## compile the source code of the application to a binary named awesome-api (the name awesome-api comes from the command go mod init github.com/<your github handle>/awesome-api) with the command go build. The first build may takes some times.
-	golangci-lint run || (false)
+build: ## Generate the website from the markdown and configuration files in the directory dist/ and compile the source code of the application to a binary named awesome-api.
 	hugo
+	make lint
 	go build 
 
-clean: ## Cleanup the content of the directory dist/
-## Stop the application. Delete the binary awesome-api and the log file awesome-api.log
+clean: ## Cleanup the content of the directory dist/.Stop the application. Delete the binary awesome-api and the log file awesome-api.log
 	pkill awesome-api
 	rm -fr ./dist/*
 	rm ./awesome-api 
@@ -16,18 +14,18 @@ post: ## Create a new blog post whose filename and title come from the environme
 	sed -i '2s/.*/title: "$(POST_TITLE)"/' content/posts/$(POST_NAME).md
 	sed -i '4s/.*/draft: false/' content/posts/$(POST_NAME).md
 
-run: ## Run the application in background by executing the binary awesome-api, and write logs into a file named awesome-api.log with the command ./awesome-api >./awesome-api.log 2>&1 &.
+run: ## Run the application in background by executing the binary awesome-api, and write logs into a file named awesome-api.log.
 	./awesome-api >./awesome-api.log 2>&1 &
 
-stop: ## Stop the application with the command kill XXXXX where XXXXX is the Process ID of the application. For instance: kill "$(pgrep awesome-api)".
+stop: ## Stop the application.
 	pkill awesome-api
 
-test: ## You want to test it to ensure that it behaves as expected. With the application started, you may want to use the command line curl (or your web browser, or the command wget or any other HTTP client):
+test: ## Test it to ensure that it behaves as expected.
 	curl http://localhost:9999
 	curl http://localhost:9999/health
 
 lint: ## Execute a static analysis to lint this code.
-	golangci-lint run
+	golangci-lint run || exit
 
 help: ## Show this help usage
 	@fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//' | sed -e 's/##//'
