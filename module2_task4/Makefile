@@ -1,5 +1,4 @@
-build: ## Generate the website from the markdown and configuration files in the directory dist/ and compile the source code of the application to a binary named awesome-api.
-	make check
+build: check ## Generate the website from the markdown and configuration files in the directory dist/ and compile the source code of the application to a binary named awesome-api.
 	hugo
 	make lint
 	go build 
