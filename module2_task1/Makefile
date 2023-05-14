@@ -3,6 +3,7 @@ build: ## Generate the website from the markdown and configuration files in the 
 	make lint
 	go build 
 
+.PHONY: clean
 clean: ## Cleanup the content of the directory dist/.Stop the application. Delete the binary awesome-api and the log file awesome-api.log
 	rm -fr ./dist/*
 	rm ./awesome-api ./awesome-api.log
