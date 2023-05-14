@@ -6,7 +6,7 @@ build: ## Generate the website from the markdown and configuration files in the 
 
 .PHONY: clean
 clean: ## Cleanup the content of the directory dist/.Stop the application. Delete the binary awesome-api and the log file awesome-api.log
-	rm -fr ./dist/*
+	rm -fr ./dist
 	rm -f ./awesome-api ./awesome-api.log
 	rm -f ./coverage-units.out ./coverage-integrations.out
 	make stop
