@@ -23,4 +23,4 @@ test: this target should run some tests to ensure that the server is working as 
 
 lint: lint the code
 
-unit_tests: Make unit tests
+unit-tests: Make unit tests
