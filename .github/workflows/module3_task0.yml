@@ -12,7 +12,10 @@ jobs:
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        #uses: actions/checkout@v2#
+        run: |
+          cd module3_task0
+          make help
 
       - name: Validate Makefile
         run: |
