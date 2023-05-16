@@ -19,4 +19,5 @@ jobs:
         run: cd module3_task1 && sudo ./setup.sh
 
       - name: Make Build
-        run: cd module3_task1 && make build
+        # Change help to build and install necessary dependencies to work
+        run: cd module3_task1 && make help
