@@ -1,4 +1,5 @@
 name: module3_task0
+
 on:
   push:
     branches:
@@ -7,17 +8,12 @@ on:
     - cron: "0 0 * * *"
 
 jobs:
-  build:
+  module3_task0:
     runs-on: ubuntu-22.04
 
     steps:
       - name: Check out code
-        #uses: actions/checkout@v2#
-        run: |
-          cd module3_task0
-          make helps
+        uses: actions/checkout@v3
 
       - name: Validate Makefile
-        run: |
-          cd module3_task0
-          make help
+        run: cd module3_task0 && make help
