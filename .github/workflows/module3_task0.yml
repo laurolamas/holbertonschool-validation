@@ -1,4 +1,4 @@
-name: module3_task 0
+name: module3_task0
 on:
   push:
     branches:
