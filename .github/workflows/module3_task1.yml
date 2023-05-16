@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Run Setup
-        run: cd module3_task1 && ./setup.sh
+        run: cd module3_task1 && sudo ./setup.sh
 
       - name: Make Build
         run: cd module3_task1 && make build
