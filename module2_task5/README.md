@@ -31,3 +31,4 @@ check: Check the Markdown source files for linting and dead links
 
 validate: Validate the generated HTML file
 
+post: Create a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME.
